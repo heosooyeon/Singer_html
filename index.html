@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div className="Section" id="page1">
+      <div id="blackBox">
+        <div id="whiteBox">
+          <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"
+          ></script>
+          <div id="search">
+            <input type="text" id="search_bar" placeholder="궁금한 가사를 적어주세용!"/>
+            <button id="bt">검색</button>
+          </div>
+          <div id="result"></div>
+          <script>
+            document.getElementById("bt").addEventListener("click", getmusic);
+            function getmusic() {
+              $.ajax({
+                method: "GET",
+                url:
+                  "https://m.search.naver.com/p/csearch/content/qapirender.nhn?where=nexearch&key" +
+                  "=LyricsSearchResult&",
+                data: {
+                  q: "가사검색 " + document.getElementById("search_bar").value,
+                },
+              }).done(function (msg) {
+                var music = $(msg.current.html).find("music_title");
+                $("#result").text(music.prevObject[0].innerText);
+              });
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+    <div className="Section" id="page2">
+      <div id="blackBox2"><div id="whiteBox2">
+
+      </div>
+    </div>
+  </body>
+</html>

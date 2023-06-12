@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.Section {
+  position: relative;
+}
+
+#page2 {
+  background-color: pink;
+  width: 100vw;
+  height: 100vh;
+}
+
+#blackBox {
+  background-color: black;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#whiteBox {
+  background-color: white;
+  margin: auto;
+  margin-top: 112px;
+  width: 88vw;
+  height: 85vh;
+}
+
+#blackBox2 {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+#whiteBox2 {
+  background-color: white;
+  margin: auto;
+  width: 88vw;
+  height: 90vh;
+}
+
+#search {
+  margin-top: 10%;
+}
+
+#search_bar {
+  background-color: #f849ba;
+  width: 300px;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+}
+
+#search_bar:focus {
+  border: none;
+}
